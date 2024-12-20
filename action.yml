@@ -1,4 +1,4 @@
-name: 'sync a git repository branch using SSH'
+name: 'Using SSH for Git repository branch sync'
 description: 'A GitHub Action for sync a git repository branch to another location (Github、Gitlab、Gitee) via SSH.'
 author: 'yutons'
 branding:
