@@ -1,0 +1,36 @@
+name: 'sync a git repository branch using SSH'
+description: 'A GitHub Action for sync a git repository branch to another location (Github、Gitlab、Gitee) via SSH.'
+author: 'yutons'
+branding:
+  icon: 'copy'
+  color: 'orange'
+inputs:
+  source-repo:
+    description: 'SSH URL of the source repo.'
+    required: true
+    default: ''
+  source-branch:
+    description: 'branch of the source repo.'
+    required: true
+    default: ''
+  destination-repo:
+    description: 'SSH URL of the destination repo.'
+    required: true
+    default: ''
+  destination-branch:
+    description: 'branch of the destination repo.'
+    required: true
+    default: ''
+  dry-run:
+    description: 'Execute a dry run.'
+    required: false
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.source-repo }}
+    - ${{ inputs.source-branch }}
+    - ${{ inputs.destination-repo }}
+    - ${{ inputs.destination-branch }}
+    - ${{ inputs.dry-run }}
